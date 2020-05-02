@@ -1,15 +1,8 @@
 <?php
 
-function descending($max) {
 
-    for ($x = $max; $x > 0; $x--) {
-    
-        for ($y = $x; $y > 0; $y--) {
-            echo "* ";
-        }
+function ascending($max) {
 
-        echo  "<br>";
-    }
 }
 
 descending(5);
