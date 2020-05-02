@@ -1,7 +1,6 @@
 <?php
 
 function multiplication ($multiplier) {
-    
     // $currentValue = $multiplier;
     // while ($currentValue <= $multiplier * 10 ) {
     //     echo "$currentValue <br>";
