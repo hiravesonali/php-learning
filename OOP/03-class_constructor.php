@@ -12,22 +12,12 @@ class Animal {
     public function __construct($name, $type)
     {
         $this->name = $name;
-        $this->setType($type);
-    }
-
-    public function setType($type)
-    {
         $this->type = $type;
-    }
-
-    public function getType()
-    {
-        return $this->type;
     }
 
     public function printDetails()
     {
-        echo $this->name . ' is a ' . $this->getType().'<br>';
+        echo $this->name . ' is a ' . $this->type.'<br>';
     }
 }
 
