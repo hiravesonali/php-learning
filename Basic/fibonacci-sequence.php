@@ -1,5 +1,5 @@
 <?php
-function fibonacci($maxNumber, $first = 0,$second = 1) {
+function fibonacci($maxNumber, $first = 0, $second = 1) {
 
     $fib = [$first, $second];
 
