@@ -1,45 +1,43 @@
 <?php
 
+// Abstract classes and methods are when the parent class has a named method, but need its child class(es) to fill out the tasks.
+
 // parent class
-abstract class Animal {
-
+abstract class Animal
+{
     public $name;
-    public $type;
-
-    public function __construct($name, $type)
+    
+    public function __construct($name)
     {
         $this->name = $name;
-        $this->type = $type;
     }
 
-    abstract public function info($name1);
-
+    // Subclasses must have to have abstract methods
+    abstract public function info();
 }
 
 // child classes
-
-class Cat extends Animal {
-
-    public function info($name1) {
-
-    return "I am Cat, and my name is $this->name!";
-    
+class Cat extends Animal
+{
+    public function info()
+    {
+        return "I am Cat, and my name is $this->name!";
     }
 
 }
 
-class Dog extends Animal {
-
-    public function info ($name1) {
-
+class Dog extends Animal
+{
+    public function info()
+    {
         return " I am Dog, and My name is $this->name!";
     }
 }
 
 
-$Cat = new Cat("Sweetie");
-echo $Cat->info($name1);
+$cat = new Cat("Sweetie");
+echo $cat->info();
 echo "<br>";
 
-$Dog = new Dog("Tomi");
-echo $Dog->info($name2);
+$dog = new Dog("Tomi");
+echo $dog->info();

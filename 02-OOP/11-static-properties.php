@@ -7,11 +7,11 @@ class Animal {
 
     public static $value = "Tomi";
 
-    public function animal01(){
-
+    public function name()
+    {
         return self::$value;
     }
 }
 
-$Animal = new Animal();
-echo $Animal->Animal01();
+$animal = new Animal();
+echo $animal->name();

@@ -20,8 +20,6 @@ class Animal {
     {
         if ($type == 'Cat') {
             $this->type = $type;
-        } else {
-            echo 'Hey, I told you to have cats only';
         }
     }
 

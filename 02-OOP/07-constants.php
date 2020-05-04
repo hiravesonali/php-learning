@@ -1,13 +1,14 @@
 <?php
 
 
-class Animal {
+class Animal
+{
     public $name;
     public $type;
 
     // contants value cannot be chaged once it declared.
 
-    const Leaving_messeage = "I am your love don't forget it!";
+    const LEAVING_MESSAGE = "I am your love don't forget it!";
 
     public function setType($type)
     {
@@ -20,7 +21,8 @@ class Animal {
     }
 }
 
-echo Animal::Leaving_messeage;     // We can access the constants from 
+echo Animal::LEAVING_MESSAGE;     // We can access the constants from 
+
 echo "<br>";                       // outside of class with use operator[::]
 
 $animal2 = new Animal();           // or within the class to use "self::(name of const)"
