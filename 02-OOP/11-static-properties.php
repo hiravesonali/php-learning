@@ -2,7 +2,6 @@
 
 // Static properties can be called directly - without creating an instance of a class. 
 
-
 class Animal {
 
     public static $value = "Tomi";
