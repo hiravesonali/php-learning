@@ -22,7 +22,8 @@ class Animal {
 
 echo Animal::Leaving_messeage;     // We can access the constants from 
 echo "<br>";                       // outside of class with use operator[::]
-$animal2 = new Animal();
+
+$animal2 = new Animal();           // or within the class to use "self::(name of const)"
 $animal2->name = 'Bastard';
 $animal2->setType('Cat');
 
