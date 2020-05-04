@@ -3,7 +3,7 @@ function fibonacci($maxNumber, $first = 0, $second = 1) {
 
     $fib = [$first, $second];
 
-    for($i = 1; $second < $maxNumber; $i++) {
+    for($i = 0; $second < $maxNumber; $i++) {
 
         $second = $fib[$i] + $fib[$i-1];
         
@@ -19,4 +19,4 @@ function fibonacci($maxNumber, $first = 0, $second = 1) {
 
 echo "<pre>";
 
-print_r(fibonacci(2000));
+print_r(fibonacci(20));
