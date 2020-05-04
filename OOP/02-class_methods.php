@@ -19,9 +19,11 @@ class Animal {
 /**
  * Method1: Access class variables directly
  */
+
 $animal1 = new Animal();
 
 $animal1->name = 'Burro';
+
 $animal1->type = 'Dog';
 
 echo $animal1->name . ' is  a ' . $animal1->type.'<br>';
