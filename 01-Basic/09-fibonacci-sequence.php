@@ -1,22 +1,37 @@
 <?php
-function fibonacci($maxNumber, $first = 0, $second = 1) {
+function fibonacci01($count) {
 
-    $fib = [$first, $second];
+    $fib = [0, 1];
 
-    for($i = 1; $second < $maxNumber; $i++) {
-
-        $second = $fib[$i] + $fib[$i-1];
-        
-        if ($second > $maxNumber) {
-            continue;
-        }
-
-        $fib[] = $second;
+    for($i = 1; $i < $count; $i++) {
+        $fib[] = $fib[$i] + $fib[$i-1];
     }
 
     return $fib;
 }
 
-echo "<pre>";
+var_dump(fibonacci01(15));
 
-print_r(fibonacci(2000));
+
+//second
+
+function fibonacci($maxNumber) {
+
+    $fib = [0, 1];
+    $latestNumber = 1;
+
+    for ($i = $latestNumber; $latestNumber < $maxNumber; $i++) {
+        
+        $latestNumber = $fib[$i] + $fib[$i-1];
+
+        if ($latestNumber > $maxNumber) {
+            break;
+        }
+
+        $fib[] = $latestNumber;
+    }
+
+    return $fib;
+}
+
+var_dump(fibonacci(1000));
