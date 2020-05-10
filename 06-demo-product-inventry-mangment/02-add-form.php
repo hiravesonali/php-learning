@@ -7,7 +7,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $category = test_input($_POST["Category"]);
   $description = test_input($_POST["Description"]);
 
+  $servername = "localhost";
+  $username = "root";
+  $password = "secret";
+  $dbname = "PIM";
+  
+  // Create connection
+  $conn = new mysqli($servername, $username, $password, $dbname);
+  
+
+  $sql = "INSERT INTO Products (EAN, Name, Category, Description)
+VALUES ('$EAN', '$name', '$category', '$description')";
+
+if ($conn->query($sql) === TRUE) {
+  echo "New record created successfully";
+} else {
+  echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
   header('Location: /06-demo-product-inventry-mangment/01-list.php');
+
 
 }
 
