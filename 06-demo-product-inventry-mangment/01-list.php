@@ -10,6 +10,29 @@
 
 <?php
 
+$servername = "localhost";
+$username = "root";
+$password = "secret";
+$dbname = "PIM";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "INSERT INTO Products (EAN, Name, Category, Description)
+VALUES ('345758','John', 'Gents Sport', 'Mens fashion')";
+
+if ($conn->query($sql) === TRUE) {
+  echo "New record created successfully";
+} else {
+  echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+$conn->close();
 ?>
 
 
@@ -160,7 +183,7 @@
                     Shlok
                 </td>
                 <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
-                    <span class="rounded bg-indigo-400 py-1 px-3 text-xs font-bold">Kids Wear</span>
+                    <span class="rounded bg--400 py-1 px-3 text-xs font-bold">Kids Wear</span>
                 </td>
                 <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
                     Kids fashion, Shoes, T-shirt, Jeans, Toys.
