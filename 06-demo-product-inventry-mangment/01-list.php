@@ -90,7 +90,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                 </td>
                 <td class="w-full lg:w-auto p-3 text-gray-800 border border-b text-center block lg:table-cell relative lg:static items-center">
                     <div class="flex justify-center items-center">
-                        <a href="#" class="text-blue-400 hover:text-blue-600">
+                        <a href="/06-demo-product-inventry-mangment/03-edit.php?id=<?=$row['id']?>" class="text-blue-400 hover:text-blue-600">
                             <svg class= "h-8 w-8" fill="currentColor" viewBox="0 0 20 20"><path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z"></path><path d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
                         <a>
                         <a href="/06-demo-product-inventry-mangment/04-delete.php?id=<?=$row['id']?>" class="text-red-400 hover:text-red-600">
