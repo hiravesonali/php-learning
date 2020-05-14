@@ -221,7 +221,7 @@ $sql = "SELECT * FROM Tweets";
                             @ShonaDesign
                         </span>
                             <span class="text-sm leading-5 font-medium text-gray-400 group-hover:text-gray-300 transition ease-in-out duration-150" name="Time">
-                            . 16 April
+                            <?=$tweet["Time"]?>
                           </span>
                            </p>
                     </div>
