@@ -1,3 +1,46 @@
+
+
+
+<?php
+
+$servername = "localhost";
+$username = "root";
+$password = "secret";
+$dbname = "PIM";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get data & save in the DB
+    $text = test_input($_POST["Text"]);
+
+    $sql = "INSERT INTO Tweets (Text, Time) VALUES ('$text', NOW())";
+
+    if ($conn->query($sql) === TRUE) {
+    } else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+
+
+
+    
+}
+
+function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -96,13 +139,15 @@
                 </div>
 
                 <hr class="border-gray-600">
+
+                <form method="POST">
                 <!--middle creat tweet-->
                 <div class="flex">
                     <div class="m-2 w-10 py-1">
                         <img class="inline-block h-10 w-10 rounded-full" src="https://pbs.twimg.com/profile_images/1121328878142853120/e-rpjoJi_bigger.png" alt="" />
                     </div>
                     <div class="flex-1 px-2 pt-2 mt-2">
-                        <textarea class=" bg-transparent text-gray-400 font-medium text-lg w-full" rows="2" cols="50" placeholder="What's happening?"></textarea>
+                        <textarea class=" bg-transparent text-gray-400 font-medium text-lg w-full" name="Text" rows="2" cols="50" placeholder="What's happening?"></textarea>
                     </div>                    
                 </div>
                 <!--middle creat tweet below icons-->
@@ -139,12 +184,12 @@
                     </div>
 
                     <div class="flex-1">
-                        <button class="bg-blue-400 mt-5 hover:bg-blue-600 text-white font-bold py-2 px-8 rounded-full mr-8 float-right">
+                        <button class="bg-blue-400 mt-5 hover:bg-blue-600 text-white font-bold py-2 px-8 rounded-full mr-8 float-right" type="submit">
                             Tweet
                           </button>
                     </div>
                 </div>
-
+                </form>
                 <hr class="border-blue-800 border-4">
 
                 
@@ -161,10 +206,13 @@
                       <img class="inline-block h-10 w-10 rounded-full" src="https://pbs.twimg.com/profile_images/1121328878142853120/e-rpjoJi_bigger.png" alt="" />
                     </div>
                     <div class="ml-3">
-                      <p class="text-base leading-6 font-medium text-white">
+                      <p class="text-base leading-6 font-medium text-white" name="Profile_Name">
                         Sonali Hirave 
                         <span class="text-sm leading-5 font-medium text-gray-400 group-hover:text-gray-300 transition ease-in-out duration-150">
-                            @ShonaDesign . 16 April
+                            @ShonaDesign
+                        </span>
+                            <span class="text-sm leading-5 font-medium text-gray-400 group-hover:text-gray-300 transition ease-in-out duration-150" name="Time">
+                            . 16 April
                           </span>
                            </p>
                     </div>
