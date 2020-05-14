@@ -1,7 +1,8 @@
-
-
-
 <?php
+
+require '../vendor/autoload.php';
+
+use Carbon\Carbon;
 
 $servername = "localhost";
 $username = "root";
@@ -221,7 +222,7 @@ $sql = "SELECT * FROM Tweets";
                             @ShonaDesign
                         </span>
                             <span class="text-sm leading-5 font-medium text-gray-400 group-hover:text-gray-300 transition ease-in-out duration-150" name="Time">
-                            <?=$tweet["Time"]?>
+                            <?=Carbon::parse($tweet["Time"])->diffForHumans()?>
                           </span>
                            </p>
                     </div>
