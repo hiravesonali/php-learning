@@ -27,9 +27,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "Error: " . $sql . "<br>" . $conn->error;
     }
 
-
-
-
 }
 
 function test_input($data) {
@@ -103,8 +100,9 @@ $sql = "SELECT * FROM Tweets";
             </a>
                 
                 <button class="bg-blue-400 w-48 mt-5 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full">
-  Tweet
-</button>
+                Tweet
+                </button>
+
           </nav>
               
         <div class="flex-shrink-0 flex hover:bg-blue-00 rounded-full p-4 mt-12 mr-2">
