@@ -11,7 +11,7 @@ $y = 54;
 var_dump($y);
 echo "<br>";
 
-// Decimal
+// float or Decimal 
 
 $x = 53.567;
 var_dump($x);

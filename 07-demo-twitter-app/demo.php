@@ -36,7 +36,7 @@ function test_input($data) {
     return $data;
 }
 
-$sql = "SELECT * FROM Tweets";
+$sql = "SELECT * FROM Tweets ORDER BY id DESC";
     $tweetsRs = $conn->query($sql); 
 
 ?>
@@ -398,7 +398,6 @@ $sql = "SELECT * FROM Tweets";
                 
                 </div>
 
-
                 <!--third-people suggetion to follow section-->
                 
                 <div class="max-w-sm rounded-lg bg-blue-800 overflow-hidden shadow-lg m-4 mr-20">
@@ -471,8 +470,6 @@ $sql = "SELECT * FROM Tweets";
                     </div>
 
                     <hr class="border-gray-600">
-
-                   
 
                     <!--show more-->
 
