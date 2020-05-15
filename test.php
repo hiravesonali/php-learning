@@ -1,42 +1,32 @@
 <?php
 
-class Animal {
 
-public $name;
-
-private $type;
-
-public function __construct($name)
+class Animal
 {
-    $this->name = $name;
-}
+    public $name;
+    public $type;
 
-public function setType($type)
-{
-    if ($type == 'Cat') {
+    // contants value cannot be chaged once it declared.
+
+    const LEAVING_MESSAGE = "I am your love don't forget it!";
+
+    public function setType($type)
+    {
         $this->type = $type;
+    }
+
+    public function getType()
+    {
+        return $this->type;
     }
 }
 
-protected function getType()
-{
-    return $this->type;
-}
-}
+echo Animal::LEAVING_MESSAGE;     // We can access the constants from 
 
-class Pet extends Animal
-{
-public $cloths;
+echo "<br>";                       // outside of class with use operator[::]
 
-public function printDetails()
-{
-    echo $this->name . ' is a ' . $this->getType().' who likes '. $this->cloths.' cloths <br>';
-}
-}
+$animal2 = new Animal();           // or within the class to use "self::(name of const)"
+$animal2->name = 'Bastard';
+$animal2->setType('Cat');
 
-$pet = new Pet('Sweetie');
-
-$pet->setType('Cat');
-$pet->cloths = ' Red';
-
-echo $pet->printDetails();
+echo $animal2->name . ' is a ' . $animal2->getType().'<br>';
