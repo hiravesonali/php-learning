@@ -2,25 +2,41 @@
 
 class Animal {
 
-    public $name;
-    public $type;
+public $name;
 
-    public function __construct($name, $type)
-    {
-        $this->name = $name;
+private $type;
+
+public function __construct($name)
+{
+    $this->name = $name;
+}
+
+public function setType($type)
+{
+    if ($type == 'Cat') {
         $this->type = $type;
-    }
-
-    public function printDetails()
-    {
-        echo $this->name . ' is a ' . $this->type.'<br>';
     }
 }
 
-/**
- * PHP will automatically call this function when you create an object from a class
- */
+protected function getType()
+{
+    return $this->type;
+}
+}
 
-$animal = new Animal('Sweetie', 'Cat');
+class Pet extends Animal
+{
+public $cloths;
 
-$animal->printDetails();
+public function printDetails()
+{
+    echo $this->name . ' is a ' . $this->getType().' who likes '. $this->cloths.' cloths <br>';
+}
+}
+
+$pet = new Pet('Sweetie');
+
+$pet->setType('Cat');
+$pet->cloths = ' Red';
+
+echo $pet->printDetails();
