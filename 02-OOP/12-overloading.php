@@ -31,7 +31,7 @@
      }
  }
 
- 
+
  class GermanResident extends WorldResident 
  {
      // Inherited other functions
@@ -49,3 +49,9 @@
         return ($rate/100) * $income;
     }
  }
+
+$musk = new WorldResident;
+echo $musk->bloodType() . ' >> '. $musk->food().' >> '.$musk->taxes(1000000);
+
+$markel = new GermanResident;
+echo $markel->bloodType() . ' >> '. $markel->food().' >> '.$markel->taxes(500000, 2);
